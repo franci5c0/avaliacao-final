@@ -1,0 +1,114 @@
+win + R e digite cmd --> abre o terminal 
+
+-------------------------------------------------------------------
+
+ mysql -u root -p ---> faz login no mysql no terminal
+
+--------------------------------------------------------------------
+
+SELECT * FROM tabela ---> verifica um dado da tabela
+
+---------------------------------------------------------------
+
+INSERT INTO nome_tabela VALUES ('João', 'joao@example.com', 25); ---> insere dados na tabela
+
+----------------------------------------------------------------------------------------------------------
+
+CREATE DATABASE nome_database ----> cria uma database;
+
+------------------------------------------------------
+
+CREATE TABLE nome_tabela (ID INT AUTO_INCREMENT PRIMARY KEY, Nome
+VARCHAR(100), Email VARCHAR(100), Idade INT);  			-----> cria uma tabela
+
+---------------------------------------------------------------------------------------------
+
+describe tabela (ou desc tabela) ---> mostra a descrição da tabela
+
+------------------------------------------------------------------------
+
+drop table nome_tabela --> exclui a tabela
+
+------------------------------------------------------
+
+mysql> select * from clientes order by idade asc;  --> ordena a tabela por idade em ordem crescente
+
+-----------------------------------------------------------------------------------------------------
+
+mysql> select * from clientes order by idade desc; ---> ordena a tabela por idade em ordem decrescente
+
+--------------------------------------------------------------------------------------------------------------
+
+select * from clientes where email like '%exemplo%';  ---> busca algo específico na tabela
+
+-----------------------------------------------------------------------------------------------
+
+select * from clientes order by desc limit 1;  ---> ordena em ordem decrescente as idades, com um limite de quantidade mostrada
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+where ---> "onde" ---> especifica algo na tabela
+
+-----------------------------------------------------------
+
+select nome, idade from clientes order by idade desc;  ---> seleciona nome e idade em ordem decrescente;
+
+------------------------------------------------------------------------------------------------------------
+
+select avg(idade) as media_idade from clientes; ---> calcula a média das idades
+
+------------------------------------------------------------------------------------
+
+avg ----> pega todos os valores da coluna "idade" e calcula a média
+
+-------------------------------------------------------------------------
+
+SELECT COUNT(*) FROM tbl_autores;  -----> Retornar o número total de autores cadastrados na tabela de autores:
+
+----------------------------------------------------------------------------------------------------
+
+SELECT COUNT(DISTINCT id_autor) FROM tbl_Livro; --------> Contar o número de autores que possuem livros cadastrados na tabela de autores, sem repetições
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+SELECT MAX(Preco_Livro) FROM tbl_Livro; ---------------> Descobrir o preço mais alto dos livros:
+
+---------------------------------------------------------------------------------------------------
+
+SELECT MIN(Data_Pub) FROM tbl_Livro; --->  Descobrir a data de publicação do livro mais antigo:
+
+------------------------------------------------------------------------------------------------
+
+SELECT AVG(Preco_Livro) FROM tbl_Livro; ---> Retornar o preço médio dos livros cadastrados no banco:
+
+----------------------------------------------------------------------------------------------------------
+
+SELECT SUM(Preco_Livro) FROM tbl_Livro; ---------> Descobrir o valor total dos livros presentes na tabela de livros:
+
+--------------------------------------------------------------------------------------------------------------------
+
+GROUP BY ----> agrupa os valores de uma coluna e também realiza cálculos sobre esses valores
+
+
+SELECT Cidade, SUM(Quantidade) As Total  ------>  Consulta totalizando as vendas de todos os produtos por cidade:
+FROM Vendas
+GROUP BY Cidade;
+
+-------------------------------------------------------------------------------------------------------------------
+
+SELECT nome FROM tabela WHERE nome LIKE %a% ----> retorna todos os nomes que começam com "a"
+
+--------------------------------------------------------------------------------------------------
+
+enum ('M', 'F') ---> define masculino e feminino na tabela
+
+--------------------------------------------------------------------
+
+ALTER TABLE table_name MODIFY COLUMN column_name datatype(ex: varchar); ----> modifica uma coluna específica na tabela
+
+--------------------------------------------------------------------------------------------------------------------------
+
+delete from tabela where id = número;  ---> exclui um dado específico de uma tabela existente
+
+--------------------------------------------------------------------------------------------------
+
